@@ -1,10 +1,9 @@
 import "./globals.css";
-// import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/sidebar";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout({
   children,
@@ -17,9 +16,7 @@ export default function RootLayout({
         <div className="flex">
           {/* <Sidebar /> */}
 
-          <main className="flex-1 p-8">
-            {children}
-          </main>
+          <main className="flex-1 p-8">{children}</main>
         </div>
       </body>
     </html>

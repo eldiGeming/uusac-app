@@ -69,7 +69,7 @@ export default function InvoiceTable() {
 
     try {
       await deleteInvoice(id);
-
+      setInvoices((prev) => prev.filter((item) => item.id !== id));
       alert("Invoice berhasil dihapus");
 
       router.refresh();
