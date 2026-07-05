@@ -74,8 +74,6 @@ export async function PUT(
       },
       data: {
         tangglInvoice: new Date(body.tangglInvoice),
-        namaPemilik: body.namaPemilik,
-        phone: body.phone,
         merkMobil: body.merkMobil,
         platMobil: body.platMobil,
         totalHargaService: body.totalHargaService,
