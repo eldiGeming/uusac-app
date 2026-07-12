@@ -1,5 +1,21 @@
-export const getInvoices = async () => {
-  const res = await fetch("/api/invoice");
+export const getInvoices = async ({
+  search = "",
+  page = 1,
+  limit = 10,
+}: {
+  search?: string;
+  page?: number;
+  limit?: number;
+}) => {
+  const params = new URLSearchParams({
+    search,
+    page: page.toString(),
+    limit: limit.toString(),
+  });
+
+  const res = await fetch(`/api/invoice?${params.toString()}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch invoice");
@@ -49,6 +65,18 @@ export const deleteInvoice = async (id: number) => {
   const res = await fetch(`/api/invoice/${id}`, {
     method: "DELETE",
   });
+
+  return res.json();
+};
+
+export const getDashboard = async () => {
+  const res = await fetch("/api/dashboard", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch dashboard");
+  }
 
   return res.json();
 };

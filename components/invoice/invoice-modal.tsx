@@ -165,7 +165,7 @@ export default function InvoiceModal({ open, onOpenChange, mode, invoice, onSucc
             <div>
               <Label>Plat Nomor</Label>
               <div className="relative mt-2">
-                <Input value={platMobil} onChange={(e) => setPlatMobil(e.target.value)} placeholder="Masukkan Plat nomor Mobil" />{" "}
+                <Input value={platMobil} onChange={(e) => setPlatMobil(e.target.value.toUpperCase())} placeholder="Masukkan Plat nomor Mobil" />{" "}
               </div>
             </div>
           </div>
